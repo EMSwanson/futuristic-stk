@@ -1,6 +1,10 @@
+
+import pandas as pd
 from quandl_unemployment.api import API as QAPI
 from dbnomics.api import API as DAPI
 from dbnomics.config import urls as dbnomics_urls
+
+
 
 ### Most of these apis will need to be defined as a class, then called as an instance of the same API, but with different calls repeatedly.
 
@@ -8,15 +12,22 @@ from dbnomics.config import urls as dbnomics_urls
 
 ### The other apis we will have to loop over.
 
-quandl_data = QAPI()
-quandl_data.get_data()
-quandl_data.add_colnames()
-quandl_df = quandl_data.df
-print(quandl_df)
+def gather() -> pd.DataFrame():
 
-for url in dbnomics_urls:
-    dbnomics_data = DAPI(url)
-    dbnomics_data.get_data()
-    dbnomics_data.add_colnames()
-    dbnomics_df = dbnomics_data.df
-    print(dbnomics_df)
+    quandl_data = QAPI()
+    quandl_data.get_data()
+    quandl_data.add_colnames()
+    quandl_df = quandl_data.df
+    filename = "data/api_data.csv"
+    quandl_df.to_csv(filename, encoding='utf-8')
+
+
+#   for url in dbnomics_urls:
+#        dbnomics_data = DAPI(url)
+#        dbnomics_data.get_data()
+#        dbnomics_data.add_colnames()
+#        dbnomics_df = dbnomics_data.df
+#        print(dbnomics_df)
+
+    return quandl_df
+    #, dbnomics_df
