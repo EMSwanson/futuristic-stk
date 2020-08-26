@@ -7,10 +7,16 @@ from dbnomics.api import API as DAPI
 from dbnomics.config import urls as dbnomics_urls
 
 
-def gather(filename="api_data.csv") -> pd.DataFrame():
+def gather(filename="data/api_data.csv") -> pd.DataFrame():
     quandl_data = QAPI()
     quandl_data.get_data()
     quandl_data.add_colnames()
     quandl_df = quandl_data.df
     quandl_df.to_csv(filename, encoding='utf-8')
     return quandl_df
+
+def main():
+    df = gather()
+
+if __name__ == "__main__":
+    main()
