@@ -12,7 +12,7 @@ col_names: list = ['Unemployment', 'Unemp_White', 'Unemp_Black',
     'Dow_Prices', 'S&P_PE', 'S&P_DIV',
 ]
 env: dict = {
-    "QUANDL_API_KEY": "iMm6-pAoxxUuod3xYxFA",
+    "QUANDL_API_KEY": "",
     "DATA_FOLDER": "",
 }
     
