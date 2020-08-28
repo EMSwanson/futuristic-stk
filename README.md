@@ -4,5 +4,7 @@
 
 ### Goal is to start very simply, and iterate from there.
 
+### Focusing on unemployment and some stock series.
+
 ### Initial APIS:
 1. QUANDL
