@@ -8,3 +8,5 @@
 
 ### Initial APIS:
 1. QUANDL
+
+###Entrypoint: run.sh
