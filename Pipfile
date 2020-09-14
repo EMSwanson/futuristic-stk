@@ -4,11 +4,21 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+jupyter = "*"
+keras = "*"
+seaborn = "*"
+tensorflow = "*"
+sklearn = "*"
 
 [packages]
 pandas = "*"
 quandl = "*"
 numpy = "*"
+yfinance = "*"
+lxml = "*"
+matplotlib = "*"
+timer = "*"
+boto3 = "*"
 
 [requires]
 python_version = "3.7.2"
